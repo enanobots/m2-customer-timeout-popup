@@ -4,6 +4,7 @@
 ![](https://img.shields.io/badge/Maintained-yes-gren?style=for-the-badge&logo=magento)
 
 ### Magento 2 Customer Session Timeout Popup
+![img.png](img.png)
 
 ---
 
