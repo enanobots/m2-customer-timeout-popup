@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * Created by Q-Solutions Studio
+ *
+ * @category    Nanobots
+ * @package     Nanobots_SessionTimeoutPopup
+ * @author      Jakub Winkler <jwinkler@qsolutionsstudio.com>
+ */
+ -->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V1/nanobots-sessiontimeoutpopup/getsessionlifetime" method="GET">
+        <service class="Nanobots\SessionTimeoutPopup\Api\SessionLifetimeManagementInterface" method="getGetSessionLifetime"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+</routes>

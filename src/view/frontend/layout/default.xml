@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Created by Q-Solutions Studio
+ *
+ * @category    Nanobots
+ * @package     Nanobots_SessionTimeoutPopup
+ * @author      Jakub Winkler <jwinkler@qsolutionsstudio.com>
+ */
+ -->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="root">
+            <block class="Nanobots\SessionTimeoutPopup\Block\Component" name="nanobots.session.timeout.popup"
+                   ifconfig="nanobots/sessionLifetimePopup/enabled"
+                   template="Nanobots_SessionTimeoutPopup::session.lifetime.popup.phtml" before="-"/>
+        </referenceBlock>
+    </body>
+</page>

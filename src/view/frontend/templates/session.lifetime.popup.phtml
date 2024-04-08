@@ -1,0 +1,37 @@
+<?php
+/**
+ * Created by Q-Solutions Studio
+ *
+ * @category    Nanobots
+ * @package     Nanobots_SessionTimeoutPopup
+ * @author      Jakub Winkler <jwinkler@qsolutionsstudio.com>
+
+  * @var \Nanobots\SessionTimeoutPopup\Block\Component $block */
+?>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "sessionLifetimePopup": {
+                        "component": "Nanobots_SessionTimeoutPopup/js/view/sessionTimeoutPopup",
+                        "template": "Nanobots_SessionTimeoutPopup/view/sessionTimeoutPopup",
+                        "popupTitle": "<?= $block->getPopupTitle(); ?>",
+                        "loggedOutMessage": "<?= $block->getLoggedOutMessage(); ?>",
+                        "sessionLifetime": <?= $block->getSessionLifetime(); ?>,
+                        "sessionTimeoutWarning": <?= $block->getSessionTimeoutWarning(); ?>,
+                        "loginButtonTitle": "<?= $block->getLoginButtonTitle(); ?>"
+                    }
+                }
+            }
+        }
+    }
+</script>
+
+<div class="popup-wrap">
+    <div class="popup-box">
+        <div data-bind="scope: 'sessionLifetimePopup'">
+            <!-- ko template: getTemplate() --><!-- /ko -->
+        </div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<h3 data-bind="html: mainPopupTitle"></h3>
+<hr />
+<!-- ko if: !isSessionTimedOut() -->
+    <span class="timer" data-bind="text: formatTimeLeft()"></span>
+<!-- /ko -->
+
+<!-- ko if: isSessionTimedOut() -->
+    <div class="login-btn-container">
+        <button data-bind="click: loginClick" class="login-button">
+            <span data-bind="text: getButtonTitle()"></span>
+        </button>
+    </div>
+<!-- /ko -->
+
+

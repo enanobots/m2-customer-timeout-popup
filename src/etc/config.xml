@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+/**
+ * Created by Q-Solutions Studio
+ *
+ * @category    Nanobots
+ * @package     Nanobots_SessionTimeoutPopup
+ * @author      Jakub Winkler <jwinkler@qsolutionsstudio.com>
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <nanobots>
+            <sessionLifetimePopup>
+                <enabled>1</enabled>
+                <title><![CDATA[You will be logged out in:]]></title>
+                <logged_out_msg><![CDATA[You have been logged out. <br />Click the button below to log back in:]]></logged_out_msg>
+                <button_title><![CDATA[Login]]></button_title>
+                <seconds_warning>300</seconds_warning>
+            </sessionLifetimePopup>
+        </nanobots>
+    </default>
+</config>

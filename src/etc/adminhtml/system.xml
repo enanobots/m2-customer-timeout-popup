@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Created by Q-Solutions Studio
+ *
+ * @category    Nanobots
+ * @package     Nanobots_SessionTimeoutPopup
+ * @author      Jakub Winkler <jwinkler@qsolutionsstudio.com>
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="nanobots" translate="label" sortOrder="200">
+            <label>Nanobots</label>
+        </tab>
+        <section id="nanobots" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+            <label>Session Lifetime Popup</label>
+            <tab>nanobots</tab>
+            <resource>Nanobots_TopSearch::config_nanobots_topsearch</resource>
+            <group id="sessionLifetimePopup" sortOrder="10"
+                   showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+                <label>Search Settings</label>
+                <field id="enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Slider on Homepage</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Popup message title</label>
+                </field>
+                <field id="button_title" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Logout Message</label>
+                </field>
+                <field id="logged_out_msg" translate="label comment" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Logout Message</label>
+                </field>
+                <field id="seconds_warning" translate="label comment" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Warning seconds</label>
+                    <comment>Time remaining in seconds before the session expires, prompting a popup notification for the user.</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
+

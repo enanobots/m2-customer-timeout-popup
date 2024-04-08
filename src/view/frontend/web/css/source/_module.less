@@ -1,0 +1,86 @@
+/**
+ * Created by Q-Solutions Studio
+ *
+ * @category    Nanobots
+ * @package     Nanobots_SessionTimeoutPopup
+ * @author      Jakub Winkler <jwinkler@qsolutionsstudio.com>
+ */
+.popup-wrap {
+    width:100%;
+    height:100%;
+    display:none;
+    position:absolute;
+    top:0;
+    left:0;
+    content:'';
+    background:rgba(0,0,0,0.25);
+    z-index: 500;
+
+    .popup-box {
+        width: 400px;
+        padding: 15px;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        box-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
+        border-radius: 3px;
+        background: #fff;
+        text-align: center;
+        z-index: 550;
+
+        .transform-in, .transform-out {
+            display:block;
+            -webkit-transition:all ease 0.5s;
+            transition:all ease 0.5s;
+        }
+
+        .transform-in {
+            -webkit-transform:translate(-50%, -50%) scale(1);
+            transform:translate(-50%, -50%) scale(1);
+        }
+
+        .transform-out {
+            -webkit-transform:translate(-50%, -50%) scale(0.5);
+            transform:translate(-50%, -50%) scale(0.5);
+        }
+
+        .timer {
+            font-size: 16px;
+            font-weight: bold;
+            font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+            color: #ff5501;
+            margin-bottom: 2rem;
+            display: inline-block;
+        }
+
+        .login-btn-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .login-button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                line-height: 1;
+                text-decoration: none;
+                color: #ffffff;
+                font-size: 14px;
+                border-radius: 20px;
+                width: 200px;
+                height: 40px;
+                font-weight: normal;
+                border-bottom: 5px solid #e84e00;
+                transition: 0.3s;
+                background-color: #ff5501;
+            }
+
+            .login-button:hover {
+                border-bottom-width: 0;
+                transform: translateY(5px);
+            }
+        }
+    }
+
+}

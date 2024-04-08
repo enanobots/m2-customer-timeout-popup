@@ -1,0 +1,27 @@
+{
+  "name": "enanobots/m2-customer-timeout-popup",
+  "type": "magento2-module",
+  "license": "OSL-3.0",
+  "authors": [
+    {
+      "email": "jwinkler@qsolutionsstudio.com",
+      "name": "Jakub Winkler"
+    },
+    {
+      "email": "nanobotsecommerce@gmail.com",
+      "name": "eCommerce Nanobots"
+    }
+  ],
+  "description": "Magento 2 Customer Timeout Popup",
+  "homepage": "https://github.com/enanobots/m2-customer-timeout-popup",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "autoload": {
+    "files": [
+      "src/registration.php"
+    ],
+    "psr-4": {
+      "Nanobots\\SessionTimeoutPopup\\": "src"
+    }
+  }
+}
