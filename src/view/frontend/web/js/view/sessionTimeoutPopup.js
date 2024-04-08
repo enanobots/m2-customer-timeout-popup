@@ -31,8 +31,53 @@ define(
                 sessionTimeoutWarning: 30
             },
 
+            initializeOverlayEvents: function () {
+                let self = this;
+
+                $('.popup-wrap').click(function (event) {
+                    if (event.target === this && timer.timeLeft() > 0) {
+                        self.closePopupAndProlongSession();
+                    }
+                });
+
+                // Detect the Escape key press
+                $(document).keyup(function (event) {
+                    if (self.popupVisible() === true && timer.timeLeft() > 0) {
+                        if (event.key === 'Escape') {
+                            self.closePopupAndProlongSession();
+                        }
+                    }
+                });
+            },
+
+            closePopupAndProlongSession: function () {
+                let sections = ['cart', 'customer'];
+
+                this.popupVisible(false);
+                $('.popup-box').removeClass('transform-in').addClass('transform-out');
+                $('.popup-wrap').fadeOut(500);
+                timer.timeLeft(this.sessionLifetime);
+                this.sendEmptyRequest();
+                customerData.invalidate(sections);
+                customerData.reload(sections, true);
+            },
+
+            sendEmptyRequest: function () {
+                const url = urlBuilder.build('rest/V1/customer/prolongSession');
+
+                $.ajax({
+                    url: url,
+                    success: function () {
+                    },
+                    error: function (xhr, status, error) {
+                        console.error('Request failed: ' + status + ' - ' + error);
+                    }
+                });
+            },
+
             initialize: function () {
                 this._super();
+                this.initializeOverlayEvents();
 
                 this.isActive.subscribe(function (data) {
                     if (data === true) {
@@ -41,7 +86,7 @@ define(
                 }.bind(this));
 
                 timer.timeLeft.subscribe(function (data) {
-                    if (data <= this.sessionTimeoutWarning) {
+                    if (data === this.sessionTimeoutWarning) {
                         this.popupVisible(true);
                     }
 
@@ -111,7 +156,7 @@ define(
              * @returns {*}
              */
             getTimeLeft: function () {
-                return timer.getTimeLeft();
+                return timer.timeLeft();
             },
 
             /**

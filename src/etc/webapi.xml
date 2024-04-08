@@ -1,4 +1,4 @@
-<?xml version="1.0" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
 /**
  * Created by Q-Solutions Studio
@@ -9,10 +9,10 @@
  */
  -->
 <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
-    <route url="/V1/nanobots-sessiontimeoutpopup/getsessionlifetime" method="GET">
-        <service class="Nanobots\SessionTimeoutPopup\Api\SessionLifetimeManagementInterface" method="getGetSessionLifetime"/>
+    <route url="/V1/customer/prolongSession" method="GET">
+        <service class="Nanobots\SessionTimeoutPopup\Api\UpdateSessionInterface" method="bulkRequest"/>
         <resources>
-            <resource ref="anonymous"/>
+            <resource ref="Magento_Customer::customer_self" />
         </resources>
     </route>
 </routes>

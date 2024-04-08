@@ -6,9 +6,14 @@
  * @package     Nanobots_SessionTimeoutPopup
  * @author      Jakub Winkler <jwinkler@qsolutionsstudio.com>
  */
-
 declare(strict_types=1);
 
-use Magento\Framework\Component\ComponentRegistrar;
+namespace Nanobots\SessionTimeoutPopup\Api;
 
-ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Nanobots_SessionTimeoutPopup', __DIR__);
+interface UpdateSessionInterface
+{
+    /**
+     * @return void
+     */
+    public function bulkRequest(): void;
+}

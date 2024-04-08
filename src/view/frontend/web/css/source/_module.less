@@ -29,24 +29,24 @@
         text-align: center;
         z-index: 550;
 
-        .transform-in, .transform-out {
+        &.transform-in, &.transform-out {
             display:block;
             -webkit-transition:all ease 0.5s;
             transition:all ease 0.5s;
         }
 
-        .transform-in {
+        &.transform-in {
             -webkit-transform:translate(-50%, -50%) scale(1);
             transform:translate(-50%, -50%) scale(1);
         }
 
-        .transform-out {
+        &.transform-out {
             -webkit-transform:translate(-50%, -50%) scale(0.5);
             transform:translate(-50%, -50%) scale(0.5);
         }
 
         .timer {
-            font-size: 16px;
+            font-size: 20px;
             font-weight: bold;
             font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
             color: #ff5501;

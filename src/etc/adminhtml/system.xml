@@ -16,10 +16,10 @@
         <section id="nanobots" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
             <label>Session Lifetime Popup</label>
             <tab>nanobots</tab>
-            <resource>Nanobots_TopSearch::config_nanobots_topsearch</resource>
+            <resource>Nanobots_SessionTimeoutPopup::lifetime_popup_settings</resource>
             <group id="sessionLifetimePopup" sortOrder="10"
                    showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
-                <label>Search Settings</label>
+                <label>Main Settings</label>
                 <field id="enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Show Slider on Homepage</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>

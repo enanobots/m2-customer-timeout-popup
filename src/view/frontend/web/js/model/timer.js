@@ -15,30 +15,16 @@ define([
         timeLeft: ko.observable(null),
         sessionTimedOut: ko.observable(false),
 
-        initializeTimer: function (totalTime, warningTime = 100) {
+        initializeTimer: function (totalTime) {
             this.timeLeft(totalTime);
-            let timeout = totalTime,
-                interval = setInterval(function () {
-                timeout--;
+            let interval = setInterval(function () {
+                this.timeLeft(this.timeLeft() - 1);
 
-                this.timeLeft(timeout);
-
-                // When the timer reaches 5 minutes
-                if (totalTime === warningTime) {
-                    console.error('Only 5 minutes left!');
-                }
-
-                // When the timer reaches 0
                 if (this.timeLeft() <= 0) {
                     this.sessionTimedOut(true);
                     clearInterval(interval);
-                    console.log('Timer ended.');
                 }
             }.bind(this), 1000);
-        },
-
-        getTimeLeft: function () {
-            return this.timeLeft();
         }
     };
 });
